@@ -17,3 +17,15 @@ The movie displayed below shows the intrusion of one defector in a world of coop
 <p align="center"><img alt="Animation grid" src="./spdMovie.gif" style="width: 150%; height: 150%">
   
 For more details about this cellular automata, look at the following paper: Nowak, M.A. and May, R.M. 1992. Evolutionary games and spatial chaos. Nature, 359: 826-829.
+
+## How to install it?
+
+To install the image, you must first get a latest version of Cormas platform by following the instructions at [Cormas GitHub](https://github.com/cormas/cormas/blob/master/README.md) (in this experiment, we used the version [8735b99](https://github.com/cormas/cormas/tree/8735b9931b98a06913b4ecf2f6214e89bbe43a27) but more recent versions should also work).
+Then open the Playground (Ctrl+OW) in your image and execute the following Metacello script (select it and press Do-it button or Ctrl+D):
+
+```Smalltalk
+Metacello new
+  baseline: 'Spatialized-Prisoners-Dilemma-model';
+  repository: 'github://cormas/Spatialized-Prisoners-Dilemma-model/src';
+  load.
+```
