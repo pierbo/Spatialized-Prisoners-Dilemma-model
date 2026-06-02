@@ -19,7 +19,7 @@ SPDModel class >> aboutThisModel [
 { #category : 'as yet unclassified' }
 SPDModel class >> modelName [
 
-	^ 'SpatializedPrisonersDilemma'
+	^ 'Spatialized Prisoners Dilemma'
 ]
 
 { #category : 'accessing' }
@@ -66,18 +66,6 @@ SPDModel >> init [
 		state: #defection.
 	SPDCell setWinningsMatrix.
 	theCells := self @@ SPDCell
-]
-
-{ #category : 'as yet unclassified' }
-SPDModel >> modelName [
-	"A human-friendly name of the model"
-	^ 'SpatializedPrisonersDilemma'
-]
-
-{ #category : 'accessing' }
-SPDModel >> prefix [
-	"Every class name in model package must begin with this prefix"
-	^ 'SPD'.
 ]
 
 { #category : 'control' }
