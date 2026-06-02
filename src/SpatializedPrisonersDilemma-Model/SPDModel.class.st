@@ -1,9 +1,6 @@
 Class {
 	#name : 'SPDModel',
 	#superclass : 'CMAbstractModel',
-	#instVars : [
-		'theCells'
-	],
 	#category : 'SpatializedPrisonersDilemma-Model',
 	#package : 'SpatializedPrisonersDilemma-Model'
 }
@@ -39,16 +36,16 @@ SPDModel class >> screenshotContents [
 SPDModel >> cooperation [
 
 	<probeNamed: 'cooperation rate' color: '0000FF'>
-	^ (theCells select: [ :c | c isCooperating ]) size
-	  / theCells size
+	^ (self cells select: [ :c | c isCooperating ]) size
+	  / self cells size
 ]
 
 { #category : 'probes' }
 SPDModel >> defection [
 
 	<probeNamed: 'defection rate' color: 'FF0000'>
-	^ (theCells select: [ :c | c isDefecting ]) size
-	  / theCells size
+	^ (self cells select: [ :c | c isDefecting ]) size
+	  / self cells size
 ]
 
 { #category : 'init' }
@@ -65,7 +62,6 @@ SPDModel >> init [
 		previousState: #defection;
 		state: #defection.
 	SPDCell setWinningsMatrix.
-	theCells := self @@ SPDCell
 ]
 
 { #category : 'control' }
@@ -73,7 +69,7 @@ SPDModel >> step [
 	"This method will be executed at every step of the simulation"
 
 	<control>
-	theCells do: [ :a | a setWinnings ]. 
-	theCells do: [ :a | a newState ].
-	theCells do: [ :a | a updateState ]
+	self cells do: [ :a | a setWinnings ]. 
+	self cells do: [ :a | a newState ].
+	self cells do: [ :a | a updateState ]
 ]
