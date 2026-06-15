@@ -20,7 +20,7 @@ Class {
 
 { #category : 'accessing' }
 SPDCell class >> coop_coop [
-
+	<parameterIntegerDefault: 100>
 	^ coop_coop
 ]
 
@@ -32,7 +32,7 @@ SPDCell class >> coop_coop: anObject [
 
 { #category : 'accessing' }
 SPDCell class >> coop_defect [
-
+	<parameterIntegerDefault: 0>
 	^ coop_defect
 ]
 
@@ -44,7 +44,7 @@ SPDCell class >> coop_defect: anObject [
 
 { #category : 'accessing' }
 SPDCell class >> defect_coop [
-
+	<parameterIntegerDefault: 185>
 	^ defect_coop
 ]
 
@@ -56,7 +56,7 @@ SPDCell class >> defect_coop: anObject [
 
 { #category : 'accessing' }
 SPDCell class >> defect_defect [
-
+	<parameterIntegerDefault: 0>
 	^ defect_defect
 ]
 
@@ -64,16 +64,6 @@ SPDCell class >> defect_defect [
 SPDCell class >> defect_defect: anObject [
 
 	defect_defect := anObject
-]
-
-{ #category : 'initialization' }
-SPDCell class >> initializeParameters [
-
-	super initializeParameters.
-	coop_coop := 100.
-	coop_defect := 0.
-	defect_coop := 185.
-	defect_defect := 0
 ]
 
 { #category : 'initialization' }
@@ -97,12 +87,6 @@ defection         |   185        |      0      |
 SPDCell class >> winningsMatrix [
 
 	^ winningsMatrix
-]
-
-{ #category : 'accessing' }
-SPDCell class >> winningsMatrix: anObject [
-
-	winningsMatrix := anObject
 ]
 
 { #category : 'initialization' }
